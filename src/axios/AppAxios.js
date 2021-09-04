@@ -4,20 +4,19 @@ import { API_URL } from '../utils/utils'
 
 const AppAxios = axios.create({
     baseURL:API_URL,
-    timeout:1000,
-    headers:{}
+    timeout:10000
 })
 
 const RequestHandler = request=>{
     request.headers.Authorization = `Bearer ${getToken()}`
     console.log('Request is called')
+    return request;
 }
 
 const ResponseHandler = response=>{
-    if(response.status===401){
-        console.log('Authorization is needed')
-    }
-    console.log('Response called')
+    console.log(response)
+    console.log('response is called')
+    return response
 }
 
 const ErrorHandler = error=>{

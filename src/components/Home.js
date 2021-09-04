@@ -7,10 +7,11 @@ const Home =()=>{
     const [isOpen,setIsOpen] = useState(false)
 
     const handleClick = ()=>{
-        AppAxios.get('api/9d9f2bdc4c72469b9805a3a5c88722a6')
-        .then(response=>console.log(response))
+        AppAxios.get('api/9d9f2bdc4c72469b9805a3a5c88722a6/unicorns')
+        .then(response=>{
+            //console.log('response is null')
+        })
         .catch(error=>console.log(console.error()))
-        console.log('app')
     }
    return <div className="App">
       <button className="btn" onClick={()=>handleClick()}>Open modal</button>
